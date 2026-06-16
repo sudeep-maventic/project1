@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="demofiori.project1.controller.View5"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:uxap="sap.uxap"
+>
+    <Page 
+        id="page5"
+        title="{i18n>view5Title}"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+        <Text text="Demo"></Text>
+    </Page>
+</mvc:View>

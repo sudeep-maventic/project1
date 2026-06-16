@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+
+    <Popover 
+        title="Popover Title"
+        placement="Bottom"
+        id="popover">
+        <VBox id="empContainer">
+            <Text text="{uiModel/>name}"></Text>
+        </VBox>    
+    </Popover>
+
+</core:FragmentDefinition>

@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="demofiori.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <!-- <Input id="inpName" placeholder="Enter your name" change="onTextChange"></Input>
+        <Button id="idClrBtn" text="Clear" press="onPress" type="Negative" enabled="false" /> -->
+
+        <!-- Flexbox -->
+        <!-- <FlexBox justifyContent="SpaceAround" wrap="Wrap" >
+        <Input class="sapUiSmallMarginTop" width="300px" id="inpName" placeholder="Enter your Name" change="onTextChange"></Input>
+        <Input class="sapUiSmallMarginTop" width="300px" id="inpEmail" placeholder="Enter your Email" change="onTextChange"></Input>
+        <Input class="sapUiSmallMarginTop" width="300px" id="inpDept" placeholder="Enter your Department" change="onTextChange"></Input>
+    </FlexBox> -->
+
+        <!-- VBox and HBox -->
+        <!-- <VBox >
+        <HBox width="100%">
+        <Label
+            class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+            text="Name"
+            labelFor="inpName"
+        />
+        <Input
+            id="inpName"
+            width="300px"
+            placeholder="Enter your Name"
+            change="onTextChange"
+        >
+            <layoutData>
+                <FlexItemData growFactor="1"/>
+            </layoutData>
+        </Input>
+        </HBox>
+        </VBox> -->
+
+        <!-- <Button text="Save" press="onSavePress" />
+        <List id="EmpList" items="{employeeModel>/Employee}" mode="MultiSelect">
+            <items>
+                <StandardListItem
+                    title="{employeeModel>name}"
+                    description="{employeeModel>role}"
+                    icon="sap-icon://employee"
+                    press="onEmployeePress"
+                />
+            </items>
+        </List> -->
+
+        <Input class="sapUiSmallMarginTop"
+            width="300px"
+            id="inpDept"
+            placeholder="Enter your Department"
+            change="onTextChange"
+            value="{companydata>/name}"
+        ></Input>
+    </Page>
+</mvc:View>

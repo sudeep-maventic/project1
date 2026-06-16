@@ -1,0 +1,73 @@
+<mvc:View xmlns:form="sap.ui.layout.form"
+    controllerName="demofiori.project1.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page title="Employee Management">
+        <content>
+            <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout">
+            <f:content>
+
+                <Label text="Employee ID"/>
+                <Input id="empId" width="400px" />
+
+                <Label text="Employee Name"/>
+                <Input id="empName" width="400px"/>
+
+                <Label text="Department"/>
+                <Input id="dept" width="400px"/>
+
+                <Label text="Salary"/>
+                <Input id="salary" width="400px"/>
+
+                <Label/>
+                <Button width="300px" text="Submit"
+                        type="Emphasized"
+                        press="onSubmit" />
+            </f:content>
+            </f:SimpleForm>
+
+            <Table id="empTable"
+                items="{employeeModel>/employees}">
+                <columns>
+                    <Column >
+                        <Text text="Employee Id"></Text>
+                    </Column>
+
+                    <Column >
+                        <Text text="Employee Name"></Text>
+                    </Column>   
+
+                    <Column >
+                        <Text text="Department"></Text>
+                    </Column>
+
+                    <Column >
+                        <Text text="Salary"></Text>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{employeeModel>empId}"></Text>
+                            <Text text="{employeeModel>empName}"></Text>
+                            <Text text="{employeeModel>dept}"></Text>
+                            <Text text="{employeeModel>salary}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+
+</mvc:View>
+
+
+<!-- // "employeeModel": {
+      //   "type": "sap.ui.model.json.JSONModel",
+      //   "uri": "model/EmpModel.json"
+      // }, -->

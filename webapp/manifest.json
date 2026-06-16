@@ -1,0 +1,116 @@
+{
+  "_version": "1.85.0",
+  "sap.app": {
+    "id": "demofiori.project1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.25.0",
+      "toolsId": "69b7458e-4c83-47f7-8bbf-fd73970d4587"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.148.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "demofiori.project1.i18n.i18n"
+        }
+      },
+      "companydata": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "demofiori.project1.view",
+        "async": true,
+        "viewPath": "demofiori.project1.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": "",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "RouteView2",
+          "pattern": "abc/{empid}/:empname:",
+          "target": [
+            "TargetView2"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View4",
+          "name": "View4"
+        },
+        "TargetView2": {
+          "id": "View5",
+          "name": "View5"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "demofiori.project1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "demofioriproject1"
+  }
+}

@@ -19,6 +19,41 @@ sap.ui.define([
 
         onSubmit: function() {
             let oModel = this.getView().getModel("uiModel");
+        },
+         
+        onAmountChange: function(oEvent) {
+            let oInput = oEvent.getSource();
+            let sValue = oInput.getValue();
+
+            let iValue = parseInt(sValue);
+
+            if(isNaN(iValue) || iValue < 0) {
+                oInput.setValueState("Error");
+                oInput.setValueStateText("Please enter a valid amount");
+            } else {
+                oInput.setValueState("None");
+            }
+        },
+
+        onNameChange: function(oEvent) {
+            let oInput = oEvent.getSource();
+            let sValue = oInput.getValue();
+
+            if(sValue.trim() === "") {
+                oInput.setValueState("Error");
+                oInput.setValueStateText("Name cannot be empty");
+            }
+            else if(sValue.length < 3) {
+                oInput.setValueState("Error");
+                oInput.setValueStateText("Name must be at least 3 characters long");
+            }
+            else if(sValue.length > 10) {
+                oInput.setValueState("Error");
+                oInput.setValueStateText("Name cannot be longer than 10 characters");
+            }
+            else {
+                oInput.setValueState("Success");
+            }
         }
     })
 })

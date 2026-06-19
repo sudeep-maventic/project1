@@ -93,8 +93,8 @@
       ],
       "targets": {
         "TargetView1": {
-          "id": "View4",
-          "name": "View4"
+          "id": "Validation",
+          "name": "Validation"
         },
         "TargetView2": {
           "id": "View5",

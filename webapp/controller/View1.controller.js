@@ -29,7 +29,7 @@ sap.ui.define([
             const oCompanyModel = this.getOwnerComponent().getModel("companyModel");
             const oCompanyData = this.getOwnerComponent().getModel("companydata");
 
-            oCompanyData.setData(oData);
+            oCompanyData.setData(oData);  
 
         },  
 

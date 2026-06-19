@@ -50,12 +50,14 @@
             </items>
         </List> -->
 
-        <Input class="sapUiSmallMarginTop"
+        <!-- <Input class="sapUiSmallMarginTop"
             width="300px"
             id="inpDept"
             placeholder="Enter your Department"
             change="onTextChange"
             value="{companydata>/name}"
-        ></Input>
+        ></Input> -->
+
+        
     </Page>
 </mvc:View>

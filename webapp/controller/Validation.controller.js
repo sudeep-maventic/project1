@@ -1,10 +1,11 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast"
-], (Controller, MessageToast) => {
+    "sap/m/MessageToast",
+    "demofiori/project1/controller/BaseController"
+], (Controller, MessageToast, BaseController) => {
     "use strict";
 
-    return Controller.extend("demofiori.project1.controller.Validation", {
+    return BaseController.extend("demofiori.project1.controller.Validation", {
         onInit() {
             let oData = {
                 firstName: "Rakesh",
@@ -15,6 +16,8 @@ sap.ui.define([
 
             let oModel = new sap.ui.model.json.JSONModel(oData);
             this.getView().setModel(oModel, "uiModel");
+
+            this.demoFunction();
         },
 
         onSubmit: function() {
@@ -36,24 +39,7 @@ sap.ui.define([
         },
 
         onNameChange: function(oEvent) {
-            let oInput = oEvent.getSource();
-            let sValue = oInput.getValue();
-
-            if(sValue.trim() === "") {
-                oInput.setValueState("Error");
-                oInput.setValueStateText("Name cannot be empty");
-            }
-            else if(sValue.length < 3) {
-                oInput.setValueState("Error");
-                oInput.setValueStateText("Name must be at least 3 characters long");
-            }
-            else if(sValue.length > 10) {
-                oInput.setValueState("Error");
-                oInput.setValueStateText("Name cannot be longer than 10 characters");
-            }
-            else {
-                oInput.setValueState("Success");
-            }
+            this.validation(oEvent.getSource(), 3, 10);
         }
     })
 })
